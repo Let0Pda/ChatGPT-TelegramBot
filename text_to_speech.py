@@ -10,10 +10,10 @@ class TextToSpeech:
         text = text.replace(" ", "%20")
         response = requests.get(self.API_URL + text)
         try:
-            with open(self.PATH_TO_AUDIO + f'audio{self.COUNTER}.mp3', "wb") as f:
+            with open(f'{self.PATH_TO_AUDIO}audio{self.COUNTER}.mp3', "wb") as f:
                 f.write(response.content)
             self.COUNTER += 1
-            return self.PATH_TO_AUDIO + f'audio{self.COUNTER - 1}.mp3'
+            return f'{self.PATH_TO_AUDIO}audio{self.COUNTER - 1}.mp3'
         except:
             print("Network error!")
 

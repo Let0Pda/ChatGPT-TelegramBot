@@ -36,27 +36,21 @@ def _generate_copilot(prompt: str):
     """Gets answer from copilot"""
     
     copilot = Copilot()
-    c = copilot.get_answer(prompt)
-
-    return c
+    return copilot.get_answer(prompt)
 
 
 def _translate(text: str):
     """Translates the text to English"""
     
     translator = Translator()
-    t = translator.translate(text)
-
-    return t
+    return translator.translate(text)
 
 
 def _to_speech(text: str):
     """Converts text to speech"""
     
     tts = TextToSpeech()
-    p = tts.to_speech(text)
-
-    return p
+    return tts.to_speech(text)
 
 
 #Starting the bot

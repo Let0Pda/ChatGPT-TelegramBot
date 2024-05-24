@@ -12,14 +12,12 @@ class Copilot:
     def clear_text(self, text):
         a = text.replace("\n", " ")
         b = a.split()
-        c = " ".join(b)
-
-        return c
+        return " ".join(b)
 
 
     def get_answer(self, question):
         prompt = question + self.GET_IN_UZBEK
-        
+
         load_dotenv()
 
         openai.api_key = "YOUR API KEY"
@@ -39,9 +37,7 @@ class Copilot:
         parsed_json = json.loads(json_string)
 
         text = parsed_json['choices'][0]['text']
-        cleared_text = self.clear_text(text)
-        
-        return cleared_text
+        return self.clear_text(text)
 
 
 # Usage:
